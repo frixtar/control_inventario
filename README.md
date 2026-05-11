@@ -48,3 +48,81 @@ El sistema se divide en **4 servicios lógicos** (implementados en un solo backe
 ---
 
 ## 📁 Estructura del proyecto
+
+inventario/
+├── backend/
+│ ├── config/
+│ │ └── db.js
+│ ├── controllers/
+│ │ ├── inventarioController.js
+│ │ ├── movimientosController.js
+│ │ ├── consumoController.js
+│ │ └── integracionController.js
+│ ├── models/
+│ │ ├── Material.js
+│ │ ├── CategoriaMaterial.js
+│ │ ├── Movimiento.js
+│ │ ├── Consumo.js
+│ │ └── Usuario.js
+│ ├── middleware/
+│ │ └── validarStock.js
+│ ├── routes/
+│ │ ├── inventarioRoutes.js
+│ │ ├── movimientosRoutes.js
+│ │ ├── consumoRoutes.js
+│ │ └── integracionRoutes.js
+│ ├── server.js
+│ ├── package.json
+│ └── .env
+│
+├── frontend/
+│ ├── public/
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── Dashboard.jsx
+│ │ │ ├── Inventario.jsx
+│ │ │ ├── Movimientos.jsx
+│ │ │ ├── Consumo.jsx
+│ │ │ ├── TicketSimulador.jsx
+│ │ │ └── Navbar.jsx
+│ │ ├── services/
+│ │ │ └── api.js
+│ │ ├── App.jsx
+│ │ ├── App.css
+│ │ └── main.jsx
+│ ├── index.html
+│ ├── package.json
+│ └── vite.config.js
+│
+├── .gitignore
+└── README.md
+## ⚙️ Requisitos previos
+
+- **Node.js** v16 o superior
+- **MongoDB** corriendo en `mongodb://localhost:27017`
+- **Git** (opcional, para clonar)
+- **Navegador web** moderno
+
+---
+
+## 🔧 Instalación y ejecución
+
+### 🔙 Backend (API REST)
+
+```bash
+# 1. Clonar repositorio (si no lo tienes local)
+git clone https://github.com/TU_USUARIO/inventario-mern.git
+cd inventario-mern/backend
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Configurar variables de entorno (crear archivo .env)
+echo 'PORT=5000' > .env
+echo 'MONGODB_URI=mongodb://localhost:27017/inventario_mantenimiento' >> .env
+
+# 4. Ejecutar en modo desarrollo (con reinicio automático)
+npm run dev
+
+# O en modo producción:
+npm start
