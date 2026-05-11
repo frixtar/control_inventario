@@ -9,17 +9,6 @@
 Sistema **web completo** desarrollado con la pila **MERN** (MongoDB, Express, React, Node.js) para la gestión de inventarios de materiales y herramientas utilizados en mantenimiento de equipos de cómputo y redes.  
 Incluye integración con un sistema de tickets de soporte mediante **API REST** y **Webhooks**, cumpliendo con todos los requisitos del proyecto integrador.
 
----
-
-## 🎯 Problemática que resuelve
-
-- ❌ Falta de registro claro de materiales disponibles.
-- ❌ Desconocimiento del consumo real de insumos.
-- ❌ Sin control de entradas y salidas de inventario.
-- ❌ Faltantes inesperados y nula trazabilidad.
-- ❌ Sistema de tickets aislado, sin integración con inventario.
-
----
 
 ## 🧱 Arquitectura del Sistema
 
@@ -112,17 +101,34 @@ inventario/
 ```bash
 # 1. Clonar repositorio (si no lo tienes local)
 git clone https://github.com/TU_USUARIO/inventario-mern.git
-cd inventario-mern/backend
+cd materiales/backend
 
 # 2. Instalar dependencias
-npm install
+como instalar el backend node.js:
+
+npm install express mongoose dotenv
+npm install --save-dev nodemon
+npm install cors
+Ejecutar con:
+npm run dev
 
 # 3. Configurar variables de entorno (crear archivo .env)
-echo 'PORT=5000' > .env
+echo 'PORT=5000 o 5001' > .env
 echo 'MONGODB_URI=mongodb://localhost:27017/inventario_mantenimiento' >> .env
 
 # 4. Ejecutar en modo desarrollo (con reinicio automático)
 npm run dev
 
-# O en modo producción:
-npm start
+Instalación del frontend:
+cd materiales/frontend
+
+#2 instalación de dependencias
+npm init -y
+npm install react react-dom axios
+npm install -D vite @vitejs/plugin-react
+
+# 3 Configuración de api.js:
+const API_URL = 'http://localhost:5001/api';
+
+# 4 Ejecutar para iniciar el dasboard:
+npm run dev
